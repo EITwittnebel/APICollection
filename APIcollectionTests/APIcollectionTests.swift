@@ -7,11 +7,29 @@
 //
 
 import XCTest
+import SwiftyJSON
+@testable import APIcollection
 
 class APIcollectionTests: XCTestCase {
-
+  var myModelViewTest = ModelView()
   
-  func testAPICall1() {
+  func testImageCallEqual() {
+    let UIImageFromFunc = myModelViewTest.getAPIImage(urlString: "https://via.placeholder.com/600/92c952")
+    let actualImage = UIImage(named: "testpull.png")
+    XCTAssert(actualImage!.pngData() == UIImageFromFunc.pngData())
+  }
+  
+  func testImageCallNEqual() {
+    let UIImageFromFunc = myModelViewTest.getAPIImage(urlString: "https://via.placeholder.com/600/24f355")
+    let actualImage = UIImage(named: "testpull.png")
+    XCTAssertFalse(actualImage!.pngData() == UIImageFromFunc.pngData())
+  }
+  
+  func testAPICallEqual() {
+    let json: JSON
+  }
+  
+  func testAPICallNEqual() {
     
   }
   
