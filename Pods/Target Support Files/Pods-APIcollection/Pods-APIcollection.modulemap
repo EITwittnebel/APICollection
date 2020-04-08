@@ -1,0 +1,6 @@
+framework module Pods_APIcollection {
+  umbrella header "Pods-APIcollection-umbrella.h"
+
+  export *
+  module * { export * }
+}
