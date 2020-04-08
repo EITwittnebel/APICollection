@@ -114,14 +114,6 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		3A0E8C46243E8CD000A9D06D /* View */ = {
-			isa = PBXGroup;
-			children = (
-				3A6B17B424393AAF0094F57E /* Main.storyboard */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		3A6B17A224393AAF0094F57E = {
 			isa = PBXGroup;
 			children = (
@@ -148,8 +140,8 @@
 				3A0E8C43243E8C6800A9D06D /* Model */,
 				3A0E8C44243E8C7700A9D06D /* ModelView */,
 				3A0E8C45243E8C8700A9D06D /* ViewControllers */,
-				3A0E8C46243E8CD000A9D06D /* View */,
 				3A6B17AE24393AAF0094F57E /* AppDelegate.swift */,
+				3A6B17B424393AAF0094F57E /* Main.storyboard */,
 				3A6B17B024393AAF0094F57E /* SceneDelegate.swift */,
 				3A6B17B724393AB10094F57E /* Assets.xcassets */,
 				3A6B17B924393AB10094F57E /* LaunchScreen.storyboard */,
