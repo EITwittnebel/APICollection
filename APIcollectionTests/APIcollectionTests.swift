@@ -7,11 +7,21 @@
 //
 
 import XCTest
-import SwiftyJSON
 @testable import APIcollection
+import SwiftyJSON
 
 class APIcollectionTests: XCTestCase {
-  var myModelViewTest = ModelView()
+  let myModelViewTest = ModelView()
+  
+  
+  let dict: [String: Any] =
+  [
+  "albumId": 1,
+  "id": 1,
+  "title": "accusamus beatae ad facilis cum similique qui sunt",
+  "url": "https://via.placeholder.com/600/92c952",
+  "thumbnailUrl": "https://via.placeholder.com/150/92c952"
+  ]
   
   func testImageCallEqual() {
     let UIImageFromFunc = myModelViewTest.getAPIImage(urlString: "https://via.placeholder.com/600/92c952")
@@ -26,10 +36,24 @@ class APIcollectionTests: XCTestCase {
   }
   
   func testAPICallEqual() {
-    let json: JSON
+    let testJSON = JSON(dict)
+
+    myModelViewTest.parseImageData(testJSON)
+    XCTAssert(myModelViewTest.imageData.images[0][0].title == "accusamus beatae ad facilis cum similique qui sunt")
+    XCTAssert(myModelViewTest.imageData.images[0][0].albumID == 1)
+    XCTAssert(myModelViewTest.imageData.images[0][0].id == 1)
+    XCTAssert(myModelViewTest.imageData.images[0][0].url == "https://via.placeholder.com/600/92c952")
+  
   }
   
   func testAPICallNEqual() {
+    let testJSON = JSON(dict)
+
+    myModelViewTest.parseImageData(testJSON)
+    XCTAssertFalse(myModelViewTest.imageData.images[0][0].title == "not the title")
+    XCTAssertFalse(myModelViewTest.imageData.images[0][0].albumID == 2)
+    XCTAssertFalse(myModelViewTest.imageData.images[0][0].id == 0)
+    XCTAssertFalse(myModelViewTest.imageData.images[0][0].url == "https://via.placeholder.com/600/92c322")
     
   }
   
