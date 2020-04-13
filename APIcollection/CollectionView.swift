@@ -11,16 +11,18 @@ import SwiftyJSON
 
 class CollectionView: UICollectionViewController {
   
-  var collModelView: ModelView?
+ // var collModelView: ModelView?
   
-  required init?(coder: NSCoder) {
-    collModelView = ModelView()
+ /* required init?(coder: NSCoder) {
+    modelView = ModelView()
     super.init(coder: coder)
   }
-  
+  */
   override func viewDidLoad() {
     super.viewDidLoad()
-    initiateCollModelView()
+    if (modelView.imageData.images.count == 0) {
+      initiateCollModelView()
+    }
   }
   
   override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -29,7 +31,7 @@ class CollectionView: UICollectionViewController {
       item.removeFromSuperview()
     }
     
-    let myImage = collModelView?.getAPIImage(urlString: collModelView!.imageData.images[indexPath.row][indexPath.row].thumbnailUrl)
+    let myImage = modelView.getAPIImage(urlString: modelView.imageData.images[indexPath.row][indexPath.row].thumbnailUrl)
     let myImageView = UIImageView(image: myImage)
         
     cell.addSubview(myImageView)
@@ -38,11 +40,11 @@ class CollectionView: UICollectionViewController {
   }
 
   override func numberOfSections(in collectionView: UICollectionView) -> Int {
-    return collModelView!.imageData.images.count
+    return modelView.imageData.images.count
   }
   
   override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return collModelView!.imageData.images[section].count
+    return modelView.imageData.images[section].count
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -51,7 +53,7 @@ class CollectionView: UICollectionViewController {
       let cellSender = sender as! UICollectionViewCell
       let cellSenderPath: IndexPath = collectionView.indexPath(for: cellSender)!
       //cellSender.superview as! UITableView
-      let displayImage = collModelView!.getAPIImage(urlString: collModelView!.imageData.images[cellSenderPath.row][cellSenderPath.row].url)
+      let displayImage = modelView.getAPIImage(urlString: modelView.imageData.images[cellSenderPath.row][cellSenderPath.row].url)
       let dest = segue.destination as! ViewController
       dest.imageToDisplay = displayImage
     }
@@ -64,7 +66,7 @@ class CollectionView: UICollectionViewController {
     //Do an API call, get the JSON
     let task = URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) in
       let rawData = JSON(data)
-      self.collModelView!.parseData(rawData, numImages: rawData.count)
+      modelView.parseData(rawData, numImages: rawData.count)
       semaphore.signal()
     })
     task.resume()

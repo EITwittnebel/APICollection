@@ -12,15 +12,17 @@ import SwiftyJSON
 
 class TableViewController: UITableViewController {
   
-  var tableModelView: ModelView = ModelView()
+  //var tableModelView: ModelView = ModelView()
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    initiateTableModelView()
+    if (modelView.imageData.images.count == 0) {
+      initiateTableModelView()
+    }
   }
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return tableModelView.imageData.images[section].count
+    return modelView.imageData.images[section].count
   }
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -32,7 +34,7 @@ class TableViewController: UITableViewController {
   }
   
   override func numberOfSections(in tableView: UITableView) -> Int {
-    return tableModelView.imageData.images.count
+    return modelView.imageData.images.count
   }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -40,17 +42,17 @@ class TableViewController: UITableViewController {
 
 
     if let label = cell.viewWithTag(1000) as? UILabel {
-      if (tableModelView.imageData.images.count == 0) {
+      if (modelView.imageData.images.count == 0) {
         label.text = "loading..."
       } else {
-        label.text = String(tableModelView.imageData.images[indexPath.section][indexPath.row].title)
+        label.text = String(modelView.imageData.images[indexPath.section][indexPath.row].title)
       }
     }
     
-    let iconImage = tableModelView.getAPIImage(urlString: tableModelView.imageData.images[indexPath.section][indexPath.row].thumbnailUrl)
+    let iconImage = modelView.getAPIImage(urlString: modelView.imageData.images[indexPath.section][indexPath.row].thumbnailUrl)
     
     if let thumbnail = cell.viewWithTag(1001) as? UIImageView {
-      if (tableModelView.imageData.images.count == 0) {
+      if (modelView.imageData.images.count == 0) {
         thumbnail.image = UIImage(named: "placeholder.png")
       } else {
         thumbnail.image = iconImage
@@ -66,7 +68,7 @@ class TableViewController: UITableViewController {
       let cellSender = sender as! UITableViewCell
       let cellSenderPath: IndexPath = tableView.indexPath(for: cellSender)!
       //cellSender.superview as! UITableView
-      let displayImage = tableModelView.getAPIImage(urlString: tableModelView.imageData.images[cellSenderPath.section][cellSenderPath.row].url)
+      let displayImage = modelView.getAPIImage(urlString: modelView.imageData.images[cellSenderPath.section][cellSenderPath.row].url)
       let dest = segue.destination as! ViewController
       dest.imageToDisplay = displayImage
     }
@@ -79,7 +81,7 @@ class TableViewController: UITableViewController {
     //Do an API call, get the JSON
     let task = URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) in
       let rawData = JSON(data)
-      self.tableModelView.parseData(rawData, numImages: rawData.count)
+      modelView.parseData(rawData, numImages: rawData.count)
       semaphore.signal()
     })
     task.resume()

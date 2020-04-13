@@ -10,9 +10,12 @@ import Foundation
 import UIKit
 import SwiftyJSON
 
+var modelView = ModelView()
+
 class ModelView {
-  var imageData: ImageData
-  
+ 
+  var imageData: ImageData = ImageData()
+
   init() {
     imageData = ImageData()
   }
