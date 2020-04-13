@@ -20,7 +20,7 @@ class CollectionView: UICollectionViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    initiateTableModelView()
+    initiateCollModelView()
   }
   
   override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -57,7 +57,7 @@ class CollectionView: UICollectionViewController {
     }
   }
   
-  func initiateTableModelView() {
+  func initiateCollModelView() {
     let url = URL(string: "https://jsonplaceholder.typicode.com/photos")
 
     let semaphore = DispatchSemaphore(value: 0)

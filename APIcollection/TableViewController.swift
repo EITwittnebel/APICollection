@@ -38,6 +38,7 @@ class TableViewController: UITableViewController {
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "tableViewCell")!
 
+
     if let label = cell.viewWithTag(1000) as? UILabel {
       if (tableModelView.imageData.images.count == 0) {
         label.text = "loading..."

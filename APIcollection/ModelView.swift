@@ -35,7 +35,7 @@ class ModelView {
           // No errors found.
           // It would be weird if we didn't have a response, so check for that too.
           if let res = response as? HTTPURLResponse {
-            print("Downloaded picture with response code \(res.statusCode)")
+          //  print("Downloaded picture with response code \(res.statusCode)")
             if let imageData = data {
               let image = UIImage(data: imageData)
               retVal = image

@@ -57,7 +57,7 @@
                             <outlet property="delegate" destination="vIO-Ai-3wV" id="lw3-bJ-ojW"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Collection" image="table" catalog="system" id="hWa-Jm-HFC"/>
+                    <tabBarItem key="tabBarItem" title="Collection" image="table" catalog="system" id="hWa-Jm-HFC" userLabel="Table"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xyX-Uk-MlM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -144,7 +144,7 @@
                             <outlet property="delegate" destination="lLe-JN-Twr" id="9SS-jm-qD9"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="Table" image="table.fill" catalog="system" id="856-eC-sQ4"/>
+                    <tabBarItem key="tabBarItem" title="Table" image="table.fill" catalog="system" id="856-eC-sQ4" userLabel="Collection"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zh7-a3-Y8c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
