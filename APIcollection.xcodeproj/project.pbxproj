@@ -39,7 +39,7 @@
 		3A0BA67B243D240C0069317C /* APIcollectionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = APIcollectionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A0BA67D243D240C0069317C /* APIcollectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIcollectionTests.swift; sourceTree = "<group>"; };
 		3A0BA67F243D240C0069317C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3A44E8C0243B5ADA00AEB03F /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TableViewController.swift; path = ../TableViewController.swift; sourceTree = "<group>"; };
+		3A44E8C0243B5ADA00AEB03F /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TableViewController.swift; path = APIcollection/TableViewController.swift; sourceTree = SOURCE_ROOT; };
 		3A6B17AB24393AAF0094F57E /* APIcollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APIcollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A6B17AE24393AAF0094F57E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A6B17B024393AAF0094F57E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,7 +48,7 @@
 		3A6B17B724393AB10094F57E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A6B17BA24393AB10094F57E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A6B17BC24393AB10094F57E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3A6B17C224393B980094F57E /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CollectionView.swift; path = ../CollectionView.swift; sourceTree = "<group>"; };
+		3A6B17C224393B980094F57E /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CollectionView.swift; path = APIcollection/CollectionView.swift; sourceTree = SOURCE_ROOT; };
 		3A6B17C424393C500094F57E /* ImageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageData.swift; sourceTree = "<group>"; };
 		3A6B17C6243941D30094F57E /* ModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ModelView.swift; path = APIcollection/ModelView.swift; sourceTree = SOURCE_ROOT; };
 		3A8DCE23243E95F000BE55BF /* testpull.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = testpull.png; path = APIcollection/testpull.png; sourceTree = SOURCE_ROOT; };
